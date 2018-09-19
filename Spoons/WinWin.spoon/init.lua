@@ -154,6 +154,8 @@ function obj:moveAndResize(option)
             cwin:setFrame({x=cres.x+cres.w/2, y=cres.y+cres.h/2, w=cres.w/2, h=cres.h/2})
         elseif option == "fullscreen" then
             cwin:setFrame({x=cres.x, y=cres.y, w=cres.w, h=cres.h})
+        elseif option == "original" then
+            cwin:setFrame({x=cres.x+cres.w/8, y=cres.y+cres.h/8, w=cres.w/4*3, h=cres.h/4*3})
         elseif option == "center" then
             cwin:centerOnScreen()
         elseif option == "expand" then

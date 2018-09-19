@@ -38,7 +38,8 @@ function obj:init()
     obj.which_key[1] = {
         type = "rectangle",
         action = "fill",
-        fillColor = {hex = "#EEEEEE", alpha = 0.95},
+        -- fillColor = {hex = "#EEEEEE", alpha = 0.95},
+        fillColor = {hex = "#3A3A3A", alpha = 0.95},
         roundedRectRadii = {xRadius = 10, yRadius = 10},
     }
 end
@@ -95,8 +96,10 @@ function obj:toggleCheatsheet(iterList, force)
                     type = "text",
                     text = keys_pool[idx],
                     textFont = "Courier-Bold",
+                    --textFont = "Helvetica Neue",
                     textSize = 16,
-                    textColor = {hex = "#2390FF", alpha = 1},
+                    -- textColor = {hex = "#2390FF", alpha = 1},
+                    textColor = {hex = "#FFFFFF", alpha = 1},
                     textAlignment = "left",
                     frame = {
                         x = tostring(40 / (cres.w / 5 * 3)),
@@ -110,8 +113,10 @@ function obj:toggleCheatsheet(iterList, force)
                     type = "text",
                     text = keys_pool[idx],
                     textFont = "Courier-Bold",
+                    --textFont = "Helvetica Neue",
                     textSize = 16,
-                    textColor = {hex = "#2390FF"},
+                    -- textColor = {hex = "#2390FF"},
+                    textColor = {hex = "#FFFFFF"},
                     textAlignment = "right",
                     frame = {
                         x = "50%",
