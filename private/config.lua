@@ -1,7 +1,7 @@
 -- Specify Spoons which will be loaded
 hspoon_list = {
     "AClock",
-    "BingDaily",
+    -- "BingDaily",
     -- "Calendar",
     -- "CircleClock",
     "ClipShow",
@@ -19,20 +19,26 @@ hspoon_list = {
 
 -- appM environment keybindings. Bundle `id` is prefered, but application `name` will be ok.
 hsapp_list = {
-    {key = 'c', name = 'Google Chrome'},
+    {key = '/', name = 'Google Chrome'},
+--    {key = 'd', name = 'Vivaldi'},
+    {key = 'x', name = 'Firefox'},
     {key = 'k', name = 'Slack'},
     {key = 'f', name = 'Forklift'},
     {key = 'g', name = 'Finder'},
     {key = 'i', name = 'iTerm'},
-    {key = 'm', name = 'Messages'},
-    {key = 'n', name = 'Microsoft OneNoe'},
+    {key = '.', name = 'Messages'},
+    {key = 'm', name = 'Mail'},
+    {key = 'c', name = 'Calendar'},
+    {key = ',', name = 'Spark'},
+    {key = 'n', name = 'Notes'},
     {key = 'o', name = 'Microsoft Outlook'},
     {key = 'p', name = 'PyCharm Professional'},
-    {key = 'r', name = 'Remember The Milk'},
+    {key = 'r', name = 'TickTick'},
+    {key = 't', name = 'Trello'},
     {key = 's', name = 'Spotify'},
     {key = 'v', name = 'MacVim'},
-    {key = 'x', name = 'Activity Monitor'},
-    {key = 'z', name = 'System Preferences'},
+    {key = 'a', name = 'Activity Monitor'},
+    {key = 'y', name = 'System Preferences'},
 }
 
 -- Modal supervisor keybinding, which can be used to temporarily disable ALL modal environments.
@@ -74,7 +80,7 @@ hsman_keys = {"alt", "H"}
 hscountdM_keys = {"alt", "I"}
 
 -- Lock computer's screen
-hslock_keys = {"alt", "L"}
+-- hslock_keys = {"alt", "L"}
 
 -- resizeM environment keybinding: Windows manipulation
 hsresizeM_keys = {"alt", "R"}
@@ -105,3 +111,16 @@ hs.hotkey.bind({'ctrl', 'cmd', 'alt'}, 'left', '', function() spoon.WinWin:stash
 for _, app in ipairs(hsapp_list) do
 		hs.hotkey.bind({'ctrl', 'cmd', 'alt'}, app.key, app.name, function() hs.application.launchOrFocus(app.name) end)
 end
+
+-- switcher = hs.window.switcher.new() -- default windowfilter: only visible windows, all Spaces
+-- switcher_space = hs.window.switcher.new(hs.window.filter.new():setCurrentSpace(true):setDefaultFilter{}) -- include minimized/hidden windows, current Space only
+-- switcher_browsers = hs.window.switcher.new{'Vivaldi','Google Chrome'} -- specialized switcher for your dozens of browser windows :)
+
+-- bind to hotkeys; WARNING: at least one modifier key is required!
+-- hs.hotkey.bind('cmd-alt','tab','Next window',function()switcher:next()end)
+-- hs.hotkey.bind('cmd-alt-shift','tab','Prev window',function()switcher:previous()end)
+
+-- alternatively, call .nextWindow() or .previousWindow() directly (same as hs.window.switcher.new():next())
+-- hs.hotkey.bind('alt','tab','Next window',hs.window.switcher.nextWindow)
+-- you can also bind to `repeatFn` for faster traversing
+-- hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow,nil,hs.window.switcher.previousWindow)
